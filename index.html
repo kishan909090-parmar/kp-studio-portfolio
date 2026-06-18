@@ -1,457 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>KP Editing Studio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
 
 body{
-  font-family:'Poppins',sans-serif;
-  background:#0f172a;
-  color:white;
-  overflow-x:hidden;
+margin:0;
+font-family:Poppins,Arial;
+background:#0f172a;
+color:white;
 }
 
 h1,h2,h3{
-  font-family:'Orbitron',sans-serif;
+font-family:Arial;
 }
 
-/* BACKGROUND */
-.shape{
-  position:fixed;
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  background:linear-gradient(45deg,#00f7ff,#00aaff);
-  opacity:0.2;
-  animation:float 12s infinite ease-in-out;
-  z-index:-1;
-}
-.shape2{left:80%;top:60%;animation-delay:4s}
-.shape3{left:10%;top:70%;animation-delay:2s}
 
-@keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-60px)}
-  100%{transform:translateY(0)}
-}
-
-/* NAV */
 nav{
-  position:fixed;
-  width:100%;
-  top:0;
-  background:rgba(10,15,25,0.6);
-  backdrop-filter:blur(12px);
-  padding:15px 50px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:1000;
+position:fixed;
+top:0;
+width:100%;
+padding:15px;
+background:#111827dd;
+display:flex;
+justify-content:space-around;
+z-index:10;
 }
 
-nav h1{color:#00f7ff}
-
-nav ul{
-  display:flex;
-  gap:30px;
-  list-style:none;
+nav h1{
+color:#00f7ff;
 }
 
-nav ul li{
-  cursor:pointer;
-  color:#ccc;
-}
-
-nav ul li:hover{
-  color:#fff;
-  text-shadow:0 0 10px #00f7ff;
-}
 
 .nav-btn{
-  background:linear-gradient(45deg,#00f7ff,#00aaff);
-  padding:8px 20px;
-  border-radius:20px;
-  color:black;
-  text-decoration:none;
+background:#00f7ff;
+color:black;
+padding:10px 20px;
+border-radius:20px;
+text-decoration:none;
 }
 
-/* SECTIONS */
+
 section{
-  padding:100px 50px;
-  min-height:100vh;
+padding:100px 40px;
+min-height:80vh;
 }
 
-/* HERO */
+
 .hero{
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:10px;
+text-align:center;
 }
+
 
 .hero h2{
-  font-size:50px;
-  color:#00f7ff;
+font-size:45px;
+color:#00f7ff;
 }
 
-/* LOGO */
+
 .logo{
-  width:170px;
-  height:170px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid rgba(0,247,255,0.3);
-  box-shadow:0 0 25px rgba(0,247,255,0.5);
-  animation:logoFloat 4s ease-in-out infinite;
+
+width:170px;
+height:170px;
+border-radius:50%;
+object-fit:cover;
+
 }
 
-@keyframes logoFloat{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-12px)}
-  100%{transform:translateY(0)}
-}
 
-/* GRID */
+
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-  margin-top:40px;
-  justify-items:center;
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+
 }
 
-/* CARD */
+
+
 .card{
-  max-width:280px;
-  width:100%;
-  border-radius:15px;
-  overflow:hidden;
-  transition:0.4s;
+
+overflow:hidden;
+border-radius:15px;
+
 }
 
-.card:hover{
-  transform:scale(1.05);
-  box-shadow:0 20px 40px rgba(0,247,255,0.2);
-}
 
 .card video{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-  border-radius:12px;
+
+width:100%;
+height:420px;
+object-fit:cover;
+
 }
+
+
 
 .card img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:12px;
+
+width:100%;
+height:250px;
+object-fit:cover;
+
 }
 
-/* ABOUT */
-.about-advanced{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:flex-start;
+
+.about{
+
+display:flex;
+gap:40px;
+flex-wrap:wrap;
+
 }
 
-/* 🔥 ONLY UPDATED PART */
-.about-left img{
-  width:320px;
-  border-radius:20px;
 
-  animation:aboutFloat 4s ease-in-out infinite;
-  transition:0.3s ease;
-  box-shadow:0 0 20px rgba(0,247,255,0.15);
+.about img{
+
+width:300px;
+border-radius:20px;
+
 }
 
-@keyframes aboutFloat{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
-  100%{transform:translateY(0)}
+
+.box{
+
+background:#ffffff10;
+padding:20px;
+border-radius:15px;
+margin-top:20px;
+
 }
 
-.about-left img:hover{
-  transform:scale(1.05) translateY(-5px);
-  box-shadow:0 0 35px rgba(0,247,255,0.35);
-}
 
-.about-right p{
-  color:#ccc;
-  line-height:1.7;
-  margin-bottom:20px;
-}
-
-/* BOX */
-.skills, .experience, .software{
-  margin-top:20px;
-  padding:15px;
-  border:1px solid rgba(0,247,255,0.2);
-  border-radius:12px;
-  background:rgba(255,255,255,0.03);
-}
-
-.skills ul, .experience ul{
-  margin-top:10px;
-  padding-left:20px;
-  color:#bbb;
-}
-
-.skills li, .experience li{
-  margin-bottom:6px;
-}
-
-/* SOFTWARE */
-.software-icons{
-  margin-top:10px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.software-icons span{
-  padding:6px 12px;
-  border-radius:20px;
-  background:rgba(0,247,255,0.15);
-  border:1px solid rgba(0,247,255,0.3);
-  font-size:14px;
-  color:#00f7ff;
-}
-
-/* FOOTER */
 .footer{
-  text-align:center;
-  padding:20px;
-  background:black;
+
+text-align:center;
+padding:20px;
+background:black;
+
 }
 
-/* RESPONSIVE */
-@media (max-width:1024px){
-  nav{padding:15px 25px;}
-  section{padding:90px 30px;}
-  .hero h2{font-size:40px;}
-  .about-advanced{grid-template-columns:1fr;text-align:center;}
-  .about-left img{width:260px;}
-}
-
-@media (max-width:768px){
-  nav{
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
-    padding:10px 10px;
-  }
-
-  nav ul{
-    gap:12px;
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-
-  section{
-    padding:120px 20px 80px;
-  }
-
-  .hero h2{
-    font-size:32px;
-  }
-
-  .logo{
-    width:140px;
-    height:140px;
-  }
-
-  .card video{
-    height:320px;
-  }
-}
-
-@media (max-width:480px){
-  section{
-    padding:130px 15px 80px;
-  }
-
-  .hero h2{
-    font-size:26px;
-  }
-
-  nav ul{
-    font-size:12px;
-    gap:8px;
-  }
-
-  .card video{
-    height:260px;
-  }
-
-  .software-icons span{
-    font-size:12px;
-    padding:5px 10px;
-  }
-}
 </style>
+
 </head>
+
 
 <body>
 
-<div class="shape"></div>
-<div class="shape shape2"></div>
-<div class="shape shape3"></div>
 
 <nav>
+
 <h1>KP Studio</h1>
-<ul>
-<li>Videos</li>
-<li onclick="document.getElementById('compare').scrollIntoView()">Before/After</li>
-<li>Photos</li>
-<li>About</li>
-</ul>
-<a class="nav-btn" href="https://wa.me/919313705583">Hire Me</a>
+
+<a class="nav-btn" href="https://wa.me/919313705583">
+Hire Me
+</a>
+
 </nav>
 
+
+
+
 <section class="hero">
+
+
 <h2>Creative Editing Studio</h2>
-<img src="img/kpe.png" class="logo">
-<p>Professional Video & Photo Editing by KP</p>
+
+
+<img src="kpe.png" class="logo">
+
+
+<p>
+Professional Video & Photo Editing by KP
+</p>
+
+
 </section>
 
-<section id="videos">
+
+
+
+
+<section>
+
+
 <h2>My Video Edits</h2>
 
+
 <div class="grid">
-<div class="card">
-<video class="edit-video" muted loop playsinline>
-<source src="video1.mp4">
-</video>
-</div>
+
 
 <div class="card">
+
 <video class="edit-video" muted loop playsinline>
-<source src="video2.mp4">
+
+<source src="chips.mp4">
+
 </video>
+
 </div>
+
+
+
+<div class="card">
+
+<video class="edit-video" muted loop playsinline>
+
+<source src="food.mp4">
+
+</video>
+
 </div>
+
+
+
+<div class="card">
+
+<video class="edit-video" muted loop playsinline>
+
+<source src="your.mp4">
+
+</video>
+
+</div>
+
+
+</div>
+
+
 </section>
 
-<section id="photos">
+
+
+
+
+<section>
+
+
 <h2>My Photo Edits</h2>
+
+
 <div class="grid">
-<div class="card"><img src="photo1.jpg"></div>
-<div class="card"><img src="photo2.jpg"></div>
-</div>
-</section>
-<!-- 🔥 NEW SECTION -->
-<section id="compare">
-<h2>Before / After Edits</h2>
 
-<div class="compare-row">
-<div>
-<img src="before1.jpg">
-<div class="label">Before</div>
+
+<div class="card">
+
+<img src="11.PNG">
+
 </div>
 
-<div>
-<img src="after1.jpg">
-<div class="label">After</div>
-</div>
+
+<div class="card">
+
+<img src="12.PNG">
+
 </div>
 
-<div class="compare-row">
-<div>
-<img src="before2.jpg">
-<div class="label">Before</div>
+
+<div class="card">
+
+<img src="13.PNG">
+
 </div>
 
-<div>
-<img src="after2.jpg">
-<div class="label">After</div>
+
 </div>
-</div>
+
 
 </section>
 
-<section id="about">
-<div class="about-advanced">
 
-<div class="about-left">
-<img src="img/pass.jpg">
-</div>
 
-<div class="about-right">
+
+
+
+<section>
+
+
+<div class="about">
+
+
+<img src="pass.jpg">
+
+
+
+<div>
+
 
 <h2>About Me</h2>
 
+
 <p>
-I’m KP, an 18+ creative video and photo editor from Dwarka, Gujarat, India.<br><br>
-I create cinematic edits, reels, and eye-catching visuals.<br><br>
-Focus: smooth transitions, modern effects, and storytelling.<br><br>
-📞 9313705583
+
+I’m KP, an 18+ creative video and photo editor from Gujarat, India.
+
+<br><br>
+
+I create cinematic edits, reels and modern visuals.
+
+<br><br>
+
+Focus: Smooth transitions, motion graphics and storytelling.
+
 </p>
 
-<div class="skills">
+
+
+<div class="box">
+
 <h3>Skills</h3>
-<ul>
-<li>Video Editing</li>
-<li>Motion Graphics</li>
-<li>Photo Manipulation</li>
-<li>Reels Editing</li>
-</ul>
-</div>
 
-<div class="experience">
-<h3>Experience</h3>
-<ul>
-<li>Freelance Video Editor (2023 - Present)</li>
-<li>Worked with Instagram Creators</li>
-<li>Edited 100+ Reels & Shorts</li>
-</ul>
-</div>
+Video Editing<br>
+Motion Graphics<br>
+Photo Manipulation<br>
+Reels Editing
 
-<div class="software">
-<h3>Softwares</h3>
-<div class="software-icons">
-<span>After Effects</span>
-<span>Figma</span>
-<span>CapCut</span>
-<span>DaVinci Resolve</span>
-</div>
-</div>
 
 </div>
 
+
+
+
+<div class="box">
+
+<h3>Software</h3>
+
+After Effects<br>
+Figma<br>
+CapCut<br>
+DaVinci Resolve
+
+
 </div>
+
+
+
+</div>
+
+
+</div>
+
+
 </section>
 
-<div class="footer">© 2026 KP Editing Studio</div>
+
+
+
+
+<div class="footer">
+
+© 2026 KP Editing Studio
+
+</div>
+
+
+
+
 
 <script>
-const videos = document.querySelectorAll(".edit-video");
 
-videos.forEach(v => {
-  v.addEventListener("mouseenter", () => v.play());
-  v.addEventListener("mouseleave", () => {
-    v.pause();
-    v.currentTime = 0;
-  });
-  v.addEventListener("touchstart", () => {
-    if (v.paused) v.play();
-    else v.pause();
-  });
+
+let videos=document.querySelectorAll(".edit-video");
+
+
+videos.forEach(video=>{
+
+
+video.addEventListener("mouseenter",()=>{
+
+video.play();
+
 });
+
+
+video.addEventListener("mouseleave",()=>{
+
+video.pause();
+
+video.currentTime=0;
+
+});
+
+
+});
+
+
+
 </script>
 
+
 </body>
+
 </html>
